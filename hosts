@@ -1,12 +1,12 @@
 [load_balancers]
-frontend1 
+frontend1 ansible_host=frontend1.{{guid}}.internal 
 
 [app_servers]
-app1 
-app2
+app1 ansible_host=app1.{{ guid }}.internal 
+app2 ansible_host=app2.{{ guid }}.internal
 
 [database_servers]
-appdb1
+appdb1 ansible_host=appdb1.{{ guid }}.internal
 
 [internal:children]
 load_balancers
